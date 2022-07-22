@@ -4,7 +4,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('landing', { title: 'Local Notion' });
 });
 //Google OAuth login route
 router.get('/auth/google', passport.authenticate(
