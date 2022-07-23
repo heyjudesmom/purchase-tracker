@@ -10,14 +10,16 @@
 <body>
     <nav>
         <% if (user) { %>
-            <a href="/">WELCOME</a> 
-            <div class="user">
-                
-            </div>
-            <div><img src="<%= user.avatar %>" alt="avatar" referrerpolicy="no-error"><%= user.name %></div>
+            <img id="avatar" src="<%= user.avatar %>" alt="avatar" referrerpolicy="no-error"> &nbsp;&nbsp;
+            <a href="/">NEW POST </a> &nbsp;|&nbsp;
+            <a href="/">MY TOTAL</a> &nbsp;|&nbsp;
             <a href="/logout">LOG OUT </a>
         <% } else { %>
             <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>            
     </nav>
-          
+    <main>
+        <img src="/images/landing01.jpeg" alt="purchasing coffee at a coffee shop">
+    </main>
+    <section>ABOUT</section>
+    <footer>CONTACT</footer>

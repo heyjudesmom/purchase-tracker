@@ -1,6 +1,19 @@
+/* html {
+  font-size: 10px;
+} */
+
 body {
-  padding: 50px;
+  height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 75px auto 200px 50px;
+  grid-template-areas: 
+  "nav"
+  "main"
+  "sct"
+  "ftr";
+  margin: 0
 }
 
 a {
@@ -17,3 +30,33 @@ a {
 .login img {
   height: 30px;
 }
+
+#avatar {
+  border-radius: 50%;
+}
+
+nav {
+  grid-area: "nav";
+  background-color: yellow;
+  display: flex;
+  padding: 25px;
+}
+
+main {
+  grid-area: "main";
+  background-color: pink;
+}
+
+main > img {
+  max-width: 100%;
+}
+section {
+  grid-area: "sect";
+  background-color: orange;
+}
+
+footer {
+  grid-area: "ftr";
+  background-color: rosybrown;
+}
+
