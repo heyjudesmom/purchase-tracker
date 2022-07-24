@@ -5,9 +5,10 @@
 body {
   height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color:  #353942;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 75px auto 200px 50px;
+  grid-template-columns: 100%;
+  grid-template-rows: 75px auto 100px 75px;
   grid-template-areas: 
   "nav"
   "main"
@@ -17,34 +18,51 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #DACCC3;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login img {
+  height: 30px;
+}
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 34px;
 }
-
-.login img {
-  height: 30px;
-}
-
 #avatar {
   border-radius: 50%;
 }
 
 nav {
   grid-area: "nav";
-  background-color: yellow;
-  display: flex;
+  background-color: #D79A6F;
   padding: 25px;
 }
 
+nav > img {
+  width: 34px;
+  object-fit: contain;
+  margin-left: auto;
+}
+
+nav > a {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
 main {
   grid-area: "main";
-  background-color: pink;
+  background-image: url("../images/landing01.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 main > img {
@@ -52,11 +70,37 @@ main > img {
 }
 section {
   grid-area: "sect";
-  background-color: orange;
+  background-color: #D1D2D6;
+  color: #353942;
 }
 
 footer {
   grid-area: "ftr";
-  background-color: rosybrown;
+  background-color: #D79A6F;
 }
 
+@media only screen and (min-width: 768px) {
+  main {
+    background-position: right;
+  }
+}
+form {
+  width: 60%;
+  border: 0.5vmin solid rgba(226, 161, 161, 0.499);
+  background-color: white;
+  margin: 5% auto;
+  opacity: 0.9;
+  flex-direction: column;
+  border-radius: 35%;
+}
+
+form > * {
+  font-size: 24px;
+  height: 2vmin;
+  padding: 2vmin;
+}
+
+#business-name {
+  font-family: 'Libre Barcode 39 Text', cursive;;
+  font-size: 50px;
+}
