@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   });
   
 //GET / (index functionality)
-router.get('/index', purchCtrl.index)
+router.get('/index', isLoggedIn, purchCtrl.index)
 
 //GET /new
 router.get('/new', purchCtrl.new);

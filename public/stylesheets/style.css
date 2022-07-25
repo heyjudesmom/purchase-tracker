@@ -43,7 +43,7 @@ a {
 nav {
   grid-area: "nav";
   background-color: #D79A6F;
-  padding: 25px;
+  padding: 2%;
 }
 
 nav > img {
@@ -55,7 +55,7 @@ nav > img {
 nav > a {
   text-decoration: none;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 5%;
 }
 main {
   grid-area: "main";
@@ -90,7 +90,7 @@ form {
 }
 
 form > * {
-  font-size: 24px;
+  font-size: 100%;
   height: 2vmin;
   padding: 2vmin;
 }
@@ -108,10 +108,17 @@ form > * {
 }
 
 .post {
-  background-color: rgba(95, 134, 136, 0.841);
-  border-radius: 10%;
-  margin: 0 5vmin
+  background-color: rgba(95, 134, 136, 0.916);
+  margin: 0 5vmin;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font-size: 2em; 
 }
+
 @media only screen and (min-width: 768px) {
   main {
     background-position: right;
@@ -121,5 +128,8 @@ form > * {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 1em 1em;
+  }
+  .post {
+    margin: 1em
   }
 }

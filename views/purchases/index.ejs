@@ -1,57 +1,14 @@
 <%- include('../partials/header')%>
 <main id="index">
-<div class="post">POST 1
-    <div>Amount:</div>
-    <div>Business:</div>
-    <div>Notes:</div>
-    <div>Recommend:</div>
-</div>
-<div class="post">POST 2
-    <div>Amount:</div>
-    <div>Business:</div>
-    <div>Notes:</div>
-    <div>Recommend:</div>
-</div>
-<div class="post">POST 3
-    <div>Amount:</div>
-    <div>Business:</div>
-    <div>Notes:</div>
-    <div>Recommend:</div>
-</div>
-<div class="post">POST 1
-    <div>Amount:</div>
-    <div>Business:</div>
-    <div>Notes:</div>
-    <div>Recommend:</div>
-</div>
-<div class="post">POST 2
-    <div>Amount:</div>
-    <div>Business:</div>
-    <div>Notes:</div>
-    <div>Recommend:</div>
-</div>
-<div class="post">POST 3
-    <div>Amount:</div>
-    <div>Business:</div>
-    <div>Notes:</div>
-    <div>Recommend:</div>
-</div>
-<div class="post">POST 1
-    <div>Amount:</div>
-    <div>Business:</div>
-    <div>Notes:</div>
-    <div>Recommend:</div>
-</div>
-<div class="post">POST 2
-    <div>Amount:</div>
-    <div>Business:</div>
-    <div>Notes:</div>
-    <div>Recommend:</div>
-</div>
-<div class="post">POST 3
-    <div>Amount:</div>
-    <div>Business:</div>
-    <div>Notes:</div>
-    <div>Recommend:</div>
-</div>
+    <% purchases.forEach(function(p){ %>
+
+        <div class="post">
+            <div>Amount: $<%= p.amount %> </div>
+            <div>Business:  <%= p.business%> </div>
+            <div>Notes: <%= p.notes%> </div>
+            <div>Recommend: <%= p.recommend%> </div>
+        </div>
+        <% }) %>
+
+
 <%- include('../partials/footer')%>
