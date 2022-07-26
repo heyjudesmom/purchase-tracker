@@ -127,6 +127,16 @@ form > * {
   border-style: 10px solid black;
 }
 
+#biz-drop-down {
+  width: min-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: rgb(183, 172, 172);
+  opacity: 1;
+  border-radius: 0;
+}
 @media only screen and (min-width: 768px) {
   main {
     background-position: right;
