@@ -1,4 +1,5 @@
 const Purchase = require('../models/purchase');
+const Business = require('../models/business');
 
 module.exports = {
     index,
@@ -8,7 +9,9 @@ module.exports = {
 }
 
 function newPurch(req, res) {
-    res.render('purchases/new', { title: 'New Purchase' })
+    Business.find({}, function(err, businesses) {
+        res.render('purchases/new', { businesses, title: 'New Purchase' })
+    });
 }
 
 function create(req, res) {

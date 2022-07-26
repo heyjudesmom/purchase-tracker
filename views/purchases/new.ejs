@@ -11,9 +11,15 @@
     <label>Recommend to Others:
         <input type="checkbox" name="recommend">
     </label>&nbsp;&nbsp;
-    <label>Business
-        <input type="text" name="business">
-    </label>&nbsp;&nbsp;
+
+    <form action="/purchases" method="POST"">Business:
+        <select name="business">
+            <% businesses.forEach(function(b) { %>
+                <option type="text" value="<%= b.name %>"><%= b.name %></option>
+            <% })%>
+        </select>
+    </form>&nbsp;&nbsp;
+
     <label>
         <input type="submit" value="POST" >
     </label>&nbsp;&nbsp;

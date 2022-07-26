@@ -28,8 +28,8 @@ function create(req, res) {
 }
 
 function show(req, res) {
-    Business.findById(req.params.id, function(err) {
-        res.render('businesses/show', {title: 'Details'})
+    Business.findById(req.params.id, function(err, business) {
+        res.render('businesses/show', {title: 'Details', business})
 
     })
 }
