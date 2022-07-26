@@ -68,9 +68,15 @@ main {
 main > img {
   max-width: 100%;
 }
+
+#new-form {
+  background-image: none;
+  background-color: #DACCC3;
+}
+
 section {
   grid-area: "sect";
-  background-color: #D1D2D6;
+  background-color: #4f587a;
   color: #353942;
 }
 
@@ -108,7 +114,8 @@ form > * {
 }
 
 .post {
-  background-color: rgba(95, 134, 136, 0.916);
+  background-color: rgba(113, 136, 95, 0.916);
+  color: #DACCC3;
   margin: 0 5vmin;
   display: flex;
   flex-direction: column;
@@ -117,6 +124,7 @@ form > * {
   align-items: center;
   padding: 0;
   font-size: 2em; 
+  border-style: 10px solid black;
 }
 
 @media only screen and (min-width: 768px) {

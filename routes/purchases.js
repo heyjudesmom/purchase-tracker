@@ -15,6 +15,8 @@ router.get('/index', isLoggedIn, purchCtrl.index)
 router.get('/new', purchCtrl.new);
 
 //POST / (create functionality)
-router.post('/', purchCtrl.create)
+router.post('/index', purchCtrl.create)
+
+
 
 module.exports = router;

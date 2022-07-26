@@ -4,6 +4,7 @@ module.exports = {
     index,
     new: newPurch,
     create, 
+    
 }
 
 function newPurch(req, res) {
@@ -17,10 +18,9 @@ function create(req, res) {
     purchase.firstName = req.user.firstName;
     purchase.userAvatar = req.user.avatar;
     purchase.save(function(err) {
-        if (err) console.log(err) 
         return res.redirect('/purchases/new')
     })
-    res.redirect('/purchases')
+    res.redirect('/purchases/index')
 }
 
 function index(req, res) {

@@ -1,0 +1,12 @@
+<%- include('../partials/header')%>
+<main id="new-form">
+    <form class="flex-center" action="/businesses/index" method="post">
+        <h1>Enter a New Business</h1>
+        <label>Business Name: <input type="text" name="name"></label> &nbsp;&nbsp;
+        <label>City: <input type="text" name="city"> </label> &nbsp;&nbsp;
+        <label>State: <input type="text" name="state"></label> &nbsp;&nbsp;
+        <label>Zip: <input type="number" name="zip"></label> &nbsp;&nbsp;
+        <label><input type="submit"></label>
+    </form>
+</main>
+<%- include('../partials/footer')%>

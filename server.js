@@ -14,6 +14,7 @@ require('./config/passport');
 var homeRouter = require('./routes/home');
 var usersRouter = require('./routes/users');
 const purchasesRouter = require('./routes/purchases');
+const bizRouter = require('./routes/businesses')
 
 var app = express();
 
@@ -45,6 +46,7 @@ const isLoggedIn = require('./config/auth')
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
 app.use('/purchases', isLoggedIn, purchasesRouter);
+app.use('/businesses', isLoggedIn, bizRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
