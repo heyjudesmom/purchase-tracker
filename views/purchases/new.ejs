@@ -1,14 +1,14 @@
 <%- include('../partials/header')%>
 <main>
-            <form class="flex-center" action="/index" method="POST">
+            <form class="flex-center" action="/purchases" method="POST">
                 <h1>Enter a New Purchase</h1>
-                <select>
-                    <% businesses.forEach(function(b) { %>
-                        <option name ="business" type="text" value="<%= b.name %>"><%= b.name %></option>
-                        <% }) %>
-                    </select>
+                <select name="businessId">
+                    <% businesses.forEach(function(b, idx) { %>
+                        <option value="<%= b._id %>" <%= idx === 0 ? 'selected' : '' %>><%= b.name %></option>
+                    <% }) %>
+                </select>
                 <label>Notes:
-                    <input type="text" placeholder="What did you buy?" name="notes">
+                    <textarea placeholder="What did you buy?" name="notes"></textarea>
                 </label>&nbsp;&nbsp;
                 <label>Amount Spent:
                     <input type="number" placeholder="$0.00" name="amount">

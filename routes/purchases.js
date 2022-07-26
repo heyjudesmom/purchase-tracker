@@ -10,7 +10,7 @@ router.get('/index', isLoggedIn, purchCtrl.index);
 router.get('/new', purchCtrl.new);
 
 //POST / (create functionality)
-router.post('/businesses/:id/purchases', purchCtrl.create);
+router.post('/purchases', purchCtrl.create);
 
 //GET /edit (view edit form)
 router.get('/:id/edit', isLoggedIn, purchCtrl.edit);
@@ -20,4 +20,5 @@ router.put('/:id', purchCtrl.update);
 
 //DELETE /:id (delete functionality)
 router.delete('/:id', purchCtrl.delete);
+
 module.exports = router;

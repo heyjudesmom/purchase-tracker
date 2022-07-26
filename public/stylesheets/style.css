@@ -1,6 +1,4 @@
-/* html {
-  font-size: 10px;
-} */
+
 
 body {
   height: 100vh;
@@ -91,14 +89,14 @@ form {
   background-color: white;
   margin: 5% auto;
   opacity: 0.9;
+  display: flex;
   flex-direction: column;
   border-radius: 35%;
 }
 
 form > * {
-  font-size: 100%;
   height: 2vmin;
-  padding: 2vmin;
+  margin: 3vmin;
 }
 
 #business-name {
@@ -127,16 +125,6 @@ form > * {
   border-style: 10px solid black;
 }
 
-#biz-drop-down {
-  width: min-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  background: rgb(183, 172, 172);
-  opacity: 1;
-  border-radius: 0;
-}
 @media only screen and (min-width: 768px) {
   main {
     background-position: right;
@@ -150,4 +138,4 @@ form > * {
   .post {
     margin: 1em
   }
-}
+} 

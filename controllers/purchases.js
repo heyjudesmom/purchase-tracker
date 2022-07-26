@@ -1,6 +1,7 @@
 const Purchase = require('../models/purchase');
 const Business = require('../models/business');
 const { update } = require('../models/user');
+const business = require('../models/business');
 
 module.exports = {
     index,
@@ -23,7 +24,7 @@ function create(req, res) {
     purchase.user = req.user._id;
     purchase.firstName = req.user.firstName;
     purchase.userAvatar = req.user.avatar;
-    purchase.business = req.params.id;
+    purchase.business = req.body.businessId;
     purchase.save(function(err) {
         if(err) return res.redirect('/new');
         res.redirect('/index');
@@ -31,17 +32,8 @@ function create(req, res) {
 }
 
 function index(req, res) {
-    // Promise.resolve().then(function() {
-    //     return Purchase.find({amount})
-    //     .then(function(results) {
-    //         let total = 0;
-    //         results.forEach(function(doc) {
-    //             return total += results.amount.value
-    //         });
-    //         process.exit();
-    //     })
-    // })
-    Purchase.find({}, function(err, purchases) {
+    Purchase.find({}).populate('business').exec(
+     function(err, purchases) {
         res.render('purchases/index', { purchases, title: 'Purchases' })
     })
 }
