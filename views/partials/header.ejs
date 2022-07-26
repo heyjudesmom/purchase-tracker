@@ -15,8 +15,8 @@
     <nav class="flex-center">
         <% if (user) { %>
             <div class="flex-center">Welcome, <%- user.firstName%></div>&nbsp;&nbsp;
-            <a href="/purchases/new">NEW PURCHASE </a> &nbsp;|&nbsp;
-            <a href="/purchases/index">PURCHASES </a> &nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="/new">NEW PURCHASE </a> &nbsp;|&nbsp;
+            <a href="/index">PURCHASES </a> &nbsp;|&nbsp;&nbsp;&nbsp;
             <div>MY TOTAL:</div> &nbsp;&nbsp;
             <img id="avatar" src="<%= user.avatar %>" alt="avatar" referrerpolicy="no-error"> &nbsp;&nbsp;
             <a href="/logout">LOG OUT </a>

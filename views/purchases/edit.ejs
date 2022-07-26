@@ -1,0 +1,21 @@
+<%- include('../partials/header')%>
+<main>
+            <form class="flex-center" action="/<%= purchase._id %>?_method=PUT" method="POST">
+                <h1>Edit Purchase</h1>
+                <label>Notes: 
+                    <input name="notes" value="<%= purchase.notes%>">
+                </label>
+                <label>Amount: 
+                    <input name="amount" value="<%= purchase.amount%>">
+                </label>
+                <label>Recommend:
+                    <input type="checkbox" name="recommend" value="<%= purchase.recommend ? 'on' : 'off' %>">
+                </label>
+                <input type="submit" value="SAVE">
+            </form>
+            <form action="/<%= purchase._id%>?_method=DELETE" method="POST">
+                <button type="submit">DELETE</button>
+            </form>
+
+        </main>
+<%- include('../partials/footer')%>
