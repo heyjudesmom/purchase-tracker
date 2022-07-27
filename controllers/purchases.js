@@ -1,6 +1,6 @@
 const Purchase = require('../models/purchase');
 const Business = require('../models/business');
-const { update } = require('../models/user');
+const user = require('../models/user');
 const business = require('../models/business');
 
 module.exports = {
@@ -12,9 +12,16 @@ module.exports = {
     delete: deletePurch
 }
 
+function index(req, res) {
+    Purchase.find({user: req.user._id}).populate('business').exec(
+     function(err, purchases) {
+        res.render('purchases', { purchases, title: 'Purchases'})
+    })
+}
+
 function newPurch(req, res) {
-    Business.find({}, function(err, businesses) {
-        res.render('purchases/new', { businesses, title: 'New Purchase' })
+    Business.find({user: req.user._id}, function(err, businesses, ) {
+        res.render('purchases/new', { businesses, title: 'New Purchase'})
     });
 }
 
@@ -26,15 +33,8 @@ function create(req, res) {
     purchase.userAvatar = req.user.avatar;
     purchase.business = req.body.businessId;
     purchase.save(function(err) {
-        if(err) return res.redirect('/new');
-        res.redirect('/index');
-    })
-}
-
-function index(req, res) {
-    Purchase.find({}).populate('business').exec(
-     function(err, purchases) {
-        res.render('purchases/index', { purchases, title: 'Purchases' })
+        if(err) return res.redirect('/purchases/new');
+        res.redirect('/purchases');
     })
 }
 
@@ -52,7 +52,7 @@ function updatePurch(req, res) {
         {new: true}, 
         function(err, purchase) {
             if (err || !purchase) return res.redirect('/<%=purchase._id%>/edit');
-            res.redirect('/index')
+            res.redirect('/purchases')
         }
     )
 }
@@ -60,7 +60,7 @@ function updatePurch(req, res) {
 function deletePurch(req, res) {
 Purchase.findOneAndDelete(
     {_id:req.params.id}, function(err) {
-        res.redirect('/index');
+        res.redirect('/purchases');
     }
 );
 }

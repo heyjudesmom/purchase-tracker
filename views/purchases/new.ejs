@@ -1,24 +1,24 @@
 <%- include('../partials/header')%>
 <main>
-            <form class="flex-center" action="/purchases" method="POST">
-                <h1>Enter a New Purchase</h1>
-                <select name="businessId">
-                    <% businesses.forEach(function(b, idx) { %>
-                        <option value="<%= b._id %>" <%= idx === 0 ? 'selected' : '' %>><%= b.name %></option>
-                    <% }) %>
-                </select>
-                <label>Notes:
-                    <textarea placeholder="What did you buy?" name="notes"></textarea>
-                </label>&nbsp;&nbsp;
-                <label>Amount Spent:
-                    <input type="number" placeholder="$0.00" name="amount">
-                </label>&nbsp;&nbsp;
-                <label>Recommend to Others:
-                    <input type="checkbox" name="recommend">
-                </label>&nbsp;&nbsp;
-                <label>
-                    <input type="submit" value="ADD" >
-                </label>&nbsp;&nbsp;
-            </form>
-        </main>
-        <%- include('../partials/footer')%>
+    <form class="flex-center" action="/purchases" method="POST">
+        <h1>Enter a New Purchase</h1>
+        <select name="businessId">
+            <% businesses.forEach(function(b, idx) { %>
+                <option value="<%= b._id %>" <%= idx === 0 ? 'selected' : '' %>><%= b.name %></option>
+             <% }) %>
+        </select>
+        <label>Notes:
+            <textarea placeholder="What did you buy?" name="notes"></textarea>
+        </label>&nbsp;&nbsp;
+        <label>Amount Spent:
+            <input type="number" placeholder="$0.00" name="amount">
+        </label>&nbsp;&nbsp;
+        <label>Recommend to Others:
+            <input type="checkbox" name="recommend">
+        </label>&nbsp;&nbsp;
+        <label>
+            <input type="submit" value="ADD" >
+        </label>&nbsp;&nbsp;
+    </form>
+</main>
+<%- include('../partials/footer')%>

@@ -9,8 +9,8 @@ module.exports = {
 }
 
 function index(req, res) {
-    Business.find({}, function(err, businesses){
-        res.render('businesses/index', {title: 'Businesses', businesses})
+    Business.find({user: req.user._id}, function(err, businesses){
+        res.render('businesses/index', { title: 'Where I Shop', businesses })
     })
 }
 
@@ -23,7 +23,7 @@ function create(req, res) {
     business.user = req.user._id;
     business.save(function(err) {
         if(err) return res.redirect('/businesses/new');
-        res.redirect('/businesses/index');
+        res.redirect('/businesses');
     })
 }
 

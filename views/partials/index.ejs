@@ -17,6 +17,12 @@
             <div class="flex-center">Welcome, <%- user.firstName%></div>&nbsp;&nbsp;
             <a href="/purchases/new">NEW PURCHASE </a> &nbsp;|&nbsp;
             <a href="/purchases">PURCHASES </a> &nbsp;|&nbsp;&nbsp;&nbsp;
+            <% let total = 0; %>
+            <% purchases.forEach(function(p) { %>
+                <% total += p.amount %>
+                <% }) %>
+            <div>MY TOTAL: <strong>$<%= total %></strong>
+            </div> &nbsp;&nbsp;
             <img id="avatar" src="<%= user.avatar %>" alt="avatar" referrerpolicy="no-error"> &nbsp;&nbsp;
             <a href="/logout">LOG OUT </a>
         <% } else { %>

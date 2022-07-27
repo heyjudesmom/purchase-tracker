@@ -1,14 +1,14 @@
-<%- include('../partials/header')%>
+<%- include('../partials/index')%>
 
 <main id="index">
     <% purchases.forEach(function(p){ %>
-
         <div class="post">
-            <div>Amount: $<%= p.amount %> </div>
+            <div>Posted On:  <%= p.createdAt.toLocaleDateString(); %> </div>
             <div>Business:  <%= p.business.name %> </div>
+            <div>Amount: $<%= p.amount %> </div>
             <div>Notes: <%= p.notes%> </div>
             <div>Recommend: <%= p.recommend%> </div>
-            <a href="/<%= p._id%>/edit">EDIT</a>
+            <a href="/purchases/<%= p._id%>/edit">EDIT</a>
         </div>
         <% }) %>
 

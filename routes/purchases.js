@@ -3,22 +3,16 @@ var router = express.Router();
 const purchCtrl = require('../controllers/purchases');
 const isLoggedIn = require('../config/auth');
 
-//GET / (index functionality)
-router.get('/index', isLoggedIn, purchCtrl.index);
+router.get('/purchases', isLoggedIn, purchCtrl.index);
 
-//GET /new
-router.get('/new', purchCtrl.new);
+router.get('/purchases/new', purchCtrl.new);
 
-//POST / (create functionality)
-router.post('/purchases', purchCtrl.create);
+router.post('/purchases', isLoggedIn, purchCtrl.create);
 
-//GET /edit (view edit form)
-router.get('/:id/edit', isLoggedIn, purchCtrl.edit);
+router.get('/purchases/:id/edit', isLoggedIn, purchCtrl.edit);
 
-//PUT /:id (update functionality)
 router.put('/:id', purchCtrl.update);
 
-//DELETE /:id (delete functionality)
-router.delete('/:id', purchCtrl.delete);
+router.delete('/:id', isLoggedIn, purchCtrl.delete);
 
 module.exports = router;

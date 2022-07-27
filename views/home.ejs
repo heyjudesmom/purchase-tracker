@@ -1,3 +1,28 @@
-<%- include('./partials/header')%>
-<main></main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Oxygen+Mono&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <title><%= title %></title>
+</head>
+<body>
+    <nav class="flex-center">
+        <% if (user) { %>
+            <div class="flex-center">Welcome, <%- user.firstName%></div>&nbsp;&nbsp;
+            <a href="/purchases/new">NEW PURCHASE </a> &nbsp;|&nbsp;
+            <a href="/purchases"> MY PURCHASES </a> &nbsp;|&nbsp;&nbsp;&nbsp;
+            <img id="avatar" src="<%= user.avatar %>" alt="avatar" referrerpolicy="no-error"> &nbsp;&nbsp;
+            <a href="/logout">LOG OUT </a>
+        <% } else { %>
+            <div id="business-name">Local Notion</div>&nbsp;|&nbsp;
+            <a href="/auth/google" class="login">LOG IN<img src="https://i.imgur.com/FHjYyi0.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <% } %>            
+    </nav>
+    
 <%- include('./partials/footer')%>

@@ -1,9 +1,9 @@
 <%- include('../partials/header') %>
+
 <main id="index">
     <% businesses.forEach(function(b){ %>
-
         <div class="post">
-            <div>Name: <%= b.name %> </div>
+            <div> Name: <%= b.name %> </div>
             <a href="/businesses/<%=b._id%>"> LOCATION </a>
         </div>
         <% }) %>
