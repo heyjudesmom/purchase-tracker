@@ -1,4 +1,12 @@
-
+:root {
+  --a: #ddd4cfe6;
+  --b: #79a3cbe6;
+  --c: #EBBEA0e6;
+  --d: #FFC857e6;
+  --e: #BEBAAFe6;
+  --f: #96BCDFe6;
+  --g: #9CAA73e6;
+}
 
 body {
   height: 100vh;
@@ -50,11 +58,17 @@ nav > img {
   margin-left: auto;
 }
 
-nav > a {
+a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5%;
 }
+
+a:hover {
+  text-decoration: underline;
+  color: #4C4B50;
+}
+
 main {
   grid-area: "main";
   background-image: url("../images/landing01.jpeg");
@@ -95,13 +109,13 @@ form {
 }
 
 form > * {
-  height: 2vmin;
+  height: min-content;
   margin: 3vmin;
 }
 
 #business-name {
   font-family: 'Libre Barcode 39 Text', cursive;;
-  font-size: 50px;
+  font-size: xx-large;
 }
 
 #index {
@@ -112,19 +126,38 @@ form > * {
 }
 
 .post {
-  background-color: rgba(113, 136, 95, 0.916);
-  color: #DACCC3;
-  margin: 0 5vmin;
+  width: 1fr;
+  background-color: var(--a);
+  color:#4C4B50;
+  word-wrap: normal;
+  margin: 20px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 0;
-  font-size: 2em; 
-  border-style: 10px solid black;
+  padding: 3%;
+  border: 0.5vmin solid gray;
 }
 
+.post > a {
+  padding: 0;
+  color: var(--g);
+}
+
+.post:hover{
+  border: 1vmin solid var(--c);
+}
+
+#delete {
+  width: max-content;
+  border: 0.5vmin solid rgba(226, 161, 161, 0.499);
+  background-color: rgb(185, 113, 113);
+  margin: 0 auto;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5%;
+}
 @media only screen and (min-width: 768px) {
   main {
     background-position: right;
@@ -136,6 +169,8 @@ form > * {
     gap: 1em 1em;
   }
   .post {
-    margin: 1em
+    height: min-content;
+    margin: 20px;
+    border: 0.5vmin solid black;
   }
 } 

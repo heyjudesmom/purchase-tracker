@@ -6,7 +6,8 @@ const businessSchema = new Schema({
     city: {type: String}, 
     state: {type: String}, 
     zip: {type: Number},
-    user: {type: Schema.Types.ObjectId, ref: 'User'}
+    user: {type: Schema.Types.ObjectId, ref: 'User'}, 
+    purchases: [{type:Schema.Types.ObjectId, ref: 'Purchase'}]
 }, {timestamps: true}) 
 
 module.exports = mongoose.model('Business', businessSchema)

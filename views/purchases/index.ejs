@@ -3,12 +3,14 @@
 <main id="index">
     <% purchases.forEach(function(p){ %>
         <div class="post">
-            <div>Posted On:  <%= p.createdAt.toLocaleDateString(); %> </div>
-            <div>Business:  <%= p.business.name %> </div>
-            <div>Amount: $<%= p.amount %> </div>
-            <div>Notes: <%= p.notes%> </div>
-            <div>Recommend: <%= p.recommend%> </div>
-            <a href="/purchases/<%= p._id%>/edit">EDIT</a>
+            <h6>Posted On:  <%= p.createdAt.toLocaleDateString(); %> </h6>
+            <h2> <%= p.business.name %> </h2>
+            <h3>$<%= p.amount %> </h3>
+            <h5>Notes: <%= p.notes%> </h5>
+            <div><%= p.recommend ? 'Would Recommend' : 'Would not recommend' %> </div>
+            <div>
+                <a href="/purchases/<%= p._id%>/edit">EDIT</a>
+            </div>
         </div>
         <% }) %>
 

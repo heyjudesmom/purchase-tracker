@@ -1,5 +1,5 @@
 const Business = require('../models/business');
-const purchases = require('./purchases');
+const Purchase = require('../models/purchase');
 
 module.exports = {
     index, 
@@ -28,8 +28,9 @@ function create(req, res) {
 }
 
 function show(req, res) {
-    Business.findById(req.params.id, function(err, business) {
-        res.render('businesses/show', {title: 'Details', business})
-
+    Business.findById(req.params.id)
+    .populate('purchases')
+    .exec(function(err, business, purchases) {
+        res.render('businesses/show', {title: 'Details', business, purchases})
     })
 }

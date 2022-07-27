@@ -5,7 +5,10 @@
         <div> <%= business.name %> </div>
         <div> <%= business.city %> </div>
         <div> <%= business.state %> </div>
-        <div> <%= business.zip %> </div>
+        <div> <% business.purchases.forEach(function(p) { %>
+            <div> Purchased: <%= p %></div>
+        <% }) %> 
+    </div>
     </div>
 </main>
 <%- include('../partials/footer')%>
