@@ -1,9 +1,24 @@
 # Local Notion 
-An app for tracking your support for small businesses
+***An app for tracking your support for small businesses!*** 
+
+Local Notion was developed with the idea to link users to the small and local businesses they support. 
+
+The name *Local Notion* comes from my own personal preference for shopping locally at small businesses in my neighborhood, whenever I can. *Notion* means a personal inclination, and an individual's impression of something experienced. Put the two together and we have ***an inclination to experience what local shops have to offer***. 
+
+We all know large companies (e.g. Amazon and Target) have ways to show user order history on their web applications, but what about the smaller businesses we frequent? 
+
+With the functionality to log purchases, you can see which businesses you have supported, and also how much money you have logged in the app. Watching that number grow can be satisfying, knowing that you chose to support small businesses!
 
 # Screenshots
+Local Notion landing page
 ![Landing page](https://i.imgur.com/blVbRw7.png)
+
+
+
+View all purchases. Nav bar will show total amount that has been logged.
 ![View Purchases](https://i.imgur.com/94MfCa0.png)
+
+Mobile-friendly views, including this view of a user's logged businesses.
 ![Mobile View Businesses](https://i.imgur.com/yv1NUgt.png)
 
 
