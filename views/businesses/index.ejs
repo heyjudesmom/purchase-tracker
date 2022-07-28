@@ -3,7 +3,7 @@
 <main id="index">
     <% businesses.forEach(function(b){ %>
         <div class="post">
-            <div> Name: <%= b.name %> </div>
+            <div> <%= b.name %> </div>
             <a href="/businesses/<%=b._id%>"> LOCATION </a>
         </div>
         <% }) %>

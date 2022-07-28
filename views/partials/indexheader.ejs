@@ -14,9 +14,9 @@
 <body>
     <nav class="flex-center">
         <% if (user) { %>
-            <div class="flex-center">Welcome, <%- user.firstName%></div>&nbsp;&nbsp;
-            <a href="/purchases/new">NEW PURCHASE </a> &nbsp;|&nbsp;
-            <a href="/purchases">PURCHASES </a> &nbsp;|&nbsp;&nbsp;&nbsp;
+            <div class="flex-center">Welcome, <%- user.firstName%></div>&nbsp;&nbsp;|
+            <a href="/purchases/new" <%- title === 'New Purchase' ? 'class="active"' : '' %>> NEW PURCHASE </a> &nbsp;&nbsp;|
+            <a href="/purchases" <%- title === 'Purchases' ? 'class="active"' : '' %> >PURCHASES </a> 
             <% let total = 0; %>
             <% purchases.forEach(function(p) { %>
                 <% total += p.amount %>
