@@ -24,5 +24,30 @@
             <a href="/auth/google" class="login">LOG IN<img src="https://i.imgur.com/FHjYyi0.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <% } %>            
     </nav>
-    <main></main>
+    <main>
+        <h1>Where Users are Shopping</h1>
+        <div id="all-posts-container" >
+            <% if (user) { %>
+                <% purchases.forEach(function(p){ %>
+                    <div class="post">
+                        <div><%= p.userAvatar %></div>
+                        <h2> <%= p.business.name %> </h2>
+                        <% if ( p.business.city && p.business.state && p.business.zip) { %>
+                        <h2> <%= p.business.city %>, <%= p.business.state %> <%= p.business.zip %> </h2>
+                        <% } %>
+                        <h3>$<%= p.amount %> </h3>
+                    </div>
+                    <% }) %>
+            <% } else { %>
+                <%  for(i = 0; i < 4; i++) { %>
+                        <div class="post">
+                            <div> <%= purchases[i].userAvatar %> </div>
+                            <h2> <%= purchases[i].business.name %> </h2>
+                            <h3>$<%= purchases[i].amount %> </h3>
+                        </div>
+                    <% } %>
+                <% } %>
+        </div>
+
+    </main>
 <%- include('./partials/footer')%>

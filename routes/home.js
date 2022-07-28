@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
+const purchCtrl = require('../controllers/purchases');
+const isLoggedIn = require('../config/auth');
 
-router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Local Notion' });
-});
+// router.get('/', function(req, res, next) {
+//   res.render('home', { title: 'Local Notion', purchases });
+// });
+router.get('/', purchCtrl.findAll);
 
 //Google OAuth login route
 router.get('/auth/google', passport.authenticate(

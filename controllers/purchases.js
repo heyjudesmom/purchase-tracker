@@ -8,14 +8,15 @@ module.exports = {
     create, 
     edit,
     update: updatePurch,
-    delete: deletePurch
+    delete: deletePurch,
+    findAll
 }
 
 function index(req, res) {
     Purchase.find({user: req.user._id}).populate('business').exec(
         function(err, purchases) {
         res.render('purchases', { purchases, title: 'Purchases'})
-    })
+    });
 }
 
 function newPurch(req, res) {
@@ -65,4 +66,17 @@ function deletePurch(req, res) {
             res.redirect('/purchases');
         }
     );
+}
+
+// function findAll(req, res) {
+//     Purchase.find({}, function(err, purchases) {
+//         res.render('home', { title: 'Local Notion', purchases });
+//     });
+// }
+
+function findAll(req, res) {
+    Purchase.find({}).populate('business').exec(
+        function(err, purchases) {
+        res.render('home', { title: 'Local Notion', purchases })
+    });
 }
