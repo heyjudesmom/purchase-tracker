@@ -105,13 +105,14 @@ footer {
 }
 
 form {
-  width: 60%;
+  width: max-content;
   border: 0.5vmin solid rgba(226, 161, 161, 0.499);
   background-color: white;
-  margin: 5% auto;
+  margin: 3% auto;
   opacity: 0.9;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   border-radius: 10% 10%;
 }
 
@@ -138,6 +139,7 @@ form > * {
 
 .post {
   width: 1fr;
+  height: max-content;
   background-color: var(--a);
   color:#4C4B50;
   word-wrap: normal;
@@ -146,8 +148,9 @@ form > * {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3%;
-  border: 0.5vmin solid gray;
+  border: 0.5vmin solid var(--g);
+  border-radius: 5em 5em;
+  font-size: 70%;
 }
 
 .post > a {
@@ -156,7 +159,7 @@ form > * {
 }
 
 .post:hover{
-  border: 1vmin solid var(--c);
+  border-color: var(--c);
 }
 
 #delete {
@@ -169,19 +172,48 @@ form > * {
   flex-direction: column;
   border-radius: 5%;
 }
+
+#all-posts-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: auto;
+gap: 1em;
+}
+
+#heading {
+color: var(--a);
+width: 50%;
+margin: auto;
+background-color: #353942d8;
+}
+
+#all-posts-container > .post {
+  padding: 0;
+  margin: 10px;
+}
+
+
 @media only screen and (min-width: 768px) {
   main {
     background-position: right;
   }
+
   #index {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 1em 1em;
   }
+
   .post {
     height: min-content;
     margin: 20px;
-    border: 0.5vmin solid black;
   }
+
+  #all-posts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1em;
+    }
 } 

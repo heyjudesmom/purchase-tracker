@@ -16,7 +16,7 @@
         <% if (user) { %>
             <div class="flex-center">Welcome, <%- user.firstName%></div>&nbsp;&nbsp;
             <a href="/purchases/new">NEW PURCHASE </a> &nbsp;|&nbsp;
-            <a href="/purchases"> MY PURCHASES </a> &nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="/purchases"> MY PURCHASES </a> 
             <img id="avatar" src="<%= user.avatar %>" alt="avatar" referrerpolicy="no-error"> &nbsp;&nbsp;
             <a href="/logout">LOG OUT </a>
         <% } else { %>
@@ -25,15 +25,15 @@
         <% } %>            
     </nav>
     <main>
-        <h1>Where Users are Shopping</h1>
+        <h1 class="flex-center" id="heading">Where Users are Shopping</h1>
         <div id="all-posts-container" >
             <% if (user) { %>
                 <% purchases.forEach(function(p){ %>
                     <div class="post">
                         <div><%= p.userAvatar %></div>
                         <h2> <%= p.business.name %> </h2>
-                        <% if ( p.business.city && p.business.state && p.business.zip) { %>
-                        <h2> <%= p.business.city %>, <%= p.business.state %> <%= p.business.zip %> </h2>
+                        <% if ( p.business.city && p.business.state) { %>
+                        <h2> <%= p.business.city %>, <%= p.business.state %></h2>
                         <% } %>
                         <h3>$<%= p.amount %> </h3>
                     </div>

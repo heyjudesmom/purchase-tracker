@@ -5,7 +5,7 @@ const businessSchema = new Schema({
     name: {type: String}, 
     city: {type: String}, 
     state: {type: String}, 
-    zip: {type: Number},
+    zip: {type: String},
     user: {type: Schema.Types.ObjectId, ref: 'User'}, 
     purchases: [{type:Schema.Types.ObjectId, ref: 'Purchase'}]
 }, {timestamps: true}) 

@@ -45,7 +45,7 @@ function edit(req, res) {
     Purchase.findOne({'_id': req.params.id}, function(err, purchase) {
         if(err || !purchase) return res.redirect('/');
         res.render('purchases/edit', {title: 'Edit', purchase})
-    })    
+    });  
 }
 
 function updatePurch(req, res) {
@@ -57,7 +57,7 @@ function updatePurch(req, res) {
             if (err) return res.redirect('/purchases/<%=purchase._id%>/edit');
             res.redirect('/purchases')
         }
-    )
+    );
 }
 
 function deletePurch(req, res) {
@@ -67,12 +67,6 @@ function deletePurch(req, res) {
         }
     );
 }
-
-// function findAll(req, res) {
-//     Purchase.find({}, function(err, purchases) {
-//         res.render('home', { title: 'Local Notion', purchases });
-//     });
-// }
 
 function findAll(req, res) {
     Purchase.find({}).populate('business').exec(
