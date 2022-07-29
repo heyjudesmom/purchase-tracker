@@ -29,7 +29,7 @@
             <% if (user) { %>
                 <% purchases.forEach(function(p){ %>
                     <div class="post">
-                        <h1> <%= p.business.name %> </h1>
+                        <h1> if ( p.business.name) <%= p.business.name %> </h1>
                         <% if ( p.business.city && p.business.state) { %>
                             <h2> <%= p.business.city %>, <%= p.business.state %></h2>
                             <% } %>
