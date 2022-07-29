@@ -156,9 +156,10 @@ form > * {
 .post > a {
   padding: 0;
   color: var(--g);
+  padding: 2%;
 }
 
-.post:hover{
+.post:not(#heading):hover{
   border-color: var(--c);
 }
 
@@ -182,12 +183,13 @@ gap: 1em;
 
 #heading {
 color: var(--a);
-width: 50%;
-margin: auto;
-background-color: #353942d8;
+background-color: #353942eb;
+height: 80%;
+font-size: 100%;
+border-radius: 2% 2%;
 }
 
-#all-posts-container > .post {
+#all-posts-container > * {
   padding: 0;
   margin: 10px;
 }

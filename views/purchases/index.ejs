@@ -5,12 +5,10 @@
         <div class="post">
             <h6>Posted On:  <%= p.createdAt.toLocaleDateString(); %> </h6>
             <h2> <%= p.business.name %> </h2>
-            <h3>$<%= p.amount %> </h3>
-            <h5>Notes: <%= p.notes%> </h5>
+            <h1>$<%= p.amount %> </h1>
+            <h3>Notes: <%= p.notes%> </h3>
             <div><%= p.recommend ? 'Would Recommend' : 'Would not recommend' %> </div>
-            <div>
-                <a href="/purchases/<%= p._id%>/edit">EDIT</a>
-            </div>
+            <a href="/purchases/<%= p._id%>/edit">EDIT</a>
         </div>
         <% }) %>
 

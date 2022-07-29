@@ -25,27 +25,27 @@
         <% } %>            
     </nav>
     <main>
-        <h1 class="flex-center" id="heading">Where Users are Shopping</h1>
         <div id="all-posts-container" >
+            <h2 class="post" id="heading"> WHERE USERS SHOP </h2>
             <% if (user) { %>
                 <% purchases.forEach(function(p){ %>
                     <div class="post">
-                        <div><%= p.userAvatar %></div>
-                        <h2> <%= p.business.name %> </h2>
+                        <h1> <%= p.business.name %> </h1>
                         <% if ( p.business.city && p.business.state) { %>
                         <h2> <%= p.business.city %>, <%= p.business.state %></h2>
                         <% } %>
-                        <h3>$<%= p.amount %> </h3>
+                        <h1>$<%= p.amount %> </h1>
                     </div>
                     <% }) %>
             <% } else { %>
-                <%  for(i = 0; i < 4; i++) { %>
+                <%  for(i = 0; i < 6; i++) { %>
                         <div class="post">
-                            <div> <%= purchases[i].userAvatar %> </div>
                             <h2> <%= purchases[i].business.name %> </h2>
-                            <h3>$<%= purchases[i].amount %> </h3>
+                            <h1>$<%= purchases[i].amount %> </h1>
                         </div>
                     <% } %>
+                    <h2 class="post" id="heading"><a href="/auth/google" class="login"> SIGN UP TO VIEW MORE!</a></h2>
+                    
                 <% } %>
         </div>
 
