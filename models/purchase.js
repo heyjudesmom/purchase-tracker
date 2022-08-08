@@ -13,7 +13,7 @@ const purchaseSchema = new Schema({
         min: 0,
     },
     recommend: Boolean,
-    business: {type: Schema.Types.ObjectId, ref: 'Business'},
+    business: {required: true, type: Schema.Types.ObjectId, ref: 'Business'},
 }, {
     timestamps: true
 });
